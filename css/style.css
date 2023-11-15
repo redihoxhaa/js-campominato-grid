@@ -26,6 +26,12 @@ footer {
     padding: 30px 30px;
 }
 
+.custom-btn.play,
+.custom-btn.select,
+.custom-btn.select option {
+    font-weight: 500;
+}
+
 .custom-btn {
     background-color: rgb(228, 228, 228);
     border: 1px solid gray;
@@ -51,26 +57,10 @@ main {
     padding: 0 35px;
 }
 
-.custom-btn.play,
-.custom-btn.select,
-.dropdown li a {
-    font-weight: 500;
-}
-
-.dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 200px;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-}
-
-.dropdown-menu.show {
-    background-color: rgb(228, 228, 228);
-    width: 290px;
+.custom-btn.select {
+    width: 200px;
+    margin-left: -10px;
+    padding: 0 0 0 10px;
     font-size: 1.125rem;
 }
 
@@ -81,11 +71,24 @@ ul.board {
 
 ul.board .cell {
     border: 1px solid black;
-    width: calc(100% / 10);
-    height: calc(100% / 10);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cell.facile {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.cell.medio {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.cell.difficile {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 .active {

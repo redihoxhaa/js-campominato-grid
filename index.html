@@ -38,20 +38,14 @@
                 <img src="img/Logo.png" alt="Logo boolean">
                 <h1 class="fw-bold">Campo Minato</h1>
             </div>
-            <div class="col d-flex gap-4 justify-content-end">
-                <div class="dropdown">
-                    <span class="fs-5">Difficoltà:</span>
-                    <button class="custom-btn dropdown-toggle select" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Scegli...
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Facile</a></li>
-                        <li><a class="dropdown-item" href="#">Medio</a></li>
-                        <li><a class="dropdown-item" href="#">Difficile</a></li>
-                    </ul>
-                </div>
-                <button type="button" class="custom-btn play">Play</button>
+            <div class="col d-flex gap-4 justify-content-end align-items-center">
+                <span class="fs-5">Difficoltà:</span>
+                <select class="form-select custom-btn select" id="difficulty-selector">
+                    <option value="facile">Facile</option>
+                    <option value="medio">Medio</option>
+                    <option value="difficile">Difficile</option>
+                </select>
+                <button type="button" class="custom-btn play" id="play-button">Play</button>
             </div>
         </div>
 
