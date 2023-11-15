@@ -1,44 +1,65 @@
 // FUNCTIONS
 
-function generateCell(tag, classes, content) {
+// Funzione per generare un elemento
+function generateElement(tag, classes, content, wantEventListener) {
     const cell = document.createElement(tag);
-    cell.className = classes;
+    cell.className = classes.toLowerCase();
     cell.append(content);
-    cell.addEventListener("click", function () {
-        cell.classList.add("active");
-    })
+    if (wantEventListener) {
+        cell.addEventListener("click", function () {
+            cell.classList.add("active");
+        })
+    }
+
     return cell;
 }
 
+// Funzione per generare board
 function generateBoard(elementToAppendTo, loops, difficulty) {
     for (i = 1; i <= loops; i++) {
-        const cellElement = generateCell("li", `cell ${difficulty}`, i);
+        const cellElement = generateElement("li", `cell ${difficulty}`, i, true);
         elementToAppendTo.append(cellElement);
     }
 }
+
 // OPERATIONS
 
 const board = document.querySelector(".board");
-const gameDifficulty = ["facile", "medio", "difficile"];
+const gameDifficulty = ["Noob", "Facile", "Medio", "Difficile"];
+const loopsArray = [25, 49, 81, 100];
 const chooseDifficulty = document.getElementById("difficulty-selector");
 const playButton = document.getElementById("play-button");
 const callToAction = document.querySelector(".call-to-action");
+
+
+// Creazione opzioni in modo dinamico
+for (i = 0; i < gameDifficulty.length; i++) {
+    const option = generateElement("option", "", gameDifficulty[i], false);
+    option.value = gameDifficulty[i];
+    chooseDifficulty.append(option);
+}
 
 playButton.addEventListener("click", function () {
     callToAction.classList.add("d-none");
     board.classList.remove("d-none");
     board.innerHTML = "";
+
+    // Generazione board condizionale in base alla difficoltà
     if (chooseDifficulty.value === gameDifficulty[0]) {
 
-        generateBoard(board, 100, gameDifficulty[0]);
+        generateBoard(board, loopsArray[0], gameDifficulty[0]);
 
     } else if (chooseDifficulty.value === gameDifficulty[1]) {
 
-        generateBoard(board, 81, gameDifficulty[1]);
+        generateBoard(board, loopsArray[1], gameDifficulty[1]);
 
     } else if (chooseDifficulty.value === gameDifficulty[2]) {
 
-        generateBoard(board, 49, gameDifficulty[2]);
+        generateBoard(board, loopsArray[2], gameDifficulty[2]);
+
+    } else if (chooseDifficulty.value === gameDifficulty[3]) {
+
+        generateBoard(board, loopsArray[3], gameDifficulty[3]);
 
     }
 })
