@@ -1,0 +1,104 @@
+body {
+    height: 100vh;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* #region VARIABLES */
+
+/* #endregion VARIABLES */
+
+/* #region TYPOGRAPHY */
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* #endregion TYPOGRAPHY */
+
+/* #region COMMON */
+
+header,
+main,
+footer {
+    padding: 30px 30px;
+}
+
+.custom-btn {
+    background-color: rgb(228, 228, 228);
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+/* #endregion COMMON */
+
+/* #region HEADER */
+
+
+
+/* #endregion HEADER */
+
+/* #region MAIN */
+
+main {
+    flex-grow: 1;
+    background-color: aquamarine;
+}
+
+.custom-btn.play {
+    padding: 0 35px;
+}
+
+.custom-btn.play,
+.custom-btn.select,
+.dropdown li a {
+    font-weight: 500;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 200px;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.dropdown-menu.show {
+    background-color: rgb(228, 228, 228);
+    width: 290px;
+    font-size: 1.125rem;
+}
+
+ul.board {
+    width: 800px;
+    height: 800px;
+}
+
+ul.board .cell {
+    border: 1px solid black;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    background-color: aqua;
+}
+
+/* #endregion MAIN */
+
+/* #region FOOTER */
+
+
+/* #endregion FOOTER */
+
+/* #region MEDIA QUERIES */
+
+/* #endregion MEDIA QUERIES */
