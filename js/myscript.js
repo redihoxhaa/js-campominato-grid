@@ -10,6 +10,12 @@ function generateCell(tag, classes, content) {
     return cell;
 }
 
+function generateBoard(elementToAppendTo, loops, difficulty) {
+    for (i = 1; i <= loops; i++) {
+        const cellElement = generateCell("li", `cell ${difficulty}`, i);
+        elementToAppendTo.append(cellElement);
+    }
+}
 // OPERATIONS
 
 const board = document.querySelector(".board");
@@ -24,21 +30,15 @@ playButton.addEventListener("click", function () {
     board.innerHTML = "";
     if (chooseDifficulty.value === gameDifficulty[0]) {
 
-        for (let i = 1; i <= 100; i++) {
-            const cellElement = generateCell("li", `cell ${gameDifficulty[0]}`, i)
-            board.append(cellElement);
-        }
+        generateBoard(board, 100, gameDifficulty[0]);
+
     } else if (chooseDifficulty.value === gameDifficulty[1]) {
 
-        for (let i = 1; i <= 81; i++) {
-            const cellElement = generateCell("li", `cell ${gameDifficulty[1]}`, i)
-            board.append(cellElement);
-        }
+        generateBoard(board, 81, gameDifficulty[1]);
+
     } else if (chooseDifficulty.value === gameDifficulty[2]) {
 
-        for (let i = 1; i <= 49; i++) {
-            const cellElement = generateCell("li", `cell ${gameDifficulty[2]}`, i)
-            board.append(cellElement);
-        }
+        generateBoard(board, 49, gameDifficulty[2]);
+
     }
 })
