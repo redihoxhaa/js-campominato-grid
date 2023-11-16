@@ -45,21 +45,23 @@ playButton.addEventListener("click", function () {
     board.innerHTML = "";
 
     // Generazione board condizionale in base alla difficoltà
-    if (chooseDifficulty.value === gameDifficulty[3]) {
+    switch (chooseDifficulty.value) {
+        case gameDifficulty[3]:
+            generateBoard(board, loopsArray[3], gameDifficulty[3]);
+            break;
 
-        generateBoard(board, loopsArray[3], gameDifficulty[3]);
+        case gameDifficulty[2]:
+            generateBoard(board, loopsArray[2], gameDifficulty[2]);
+            break;
 
-    } else if (chooseDifficulty.value === gameDifficulty[2]) {
+        case gameDifficulty[1]:
+            generateBoard(board, loopsArray[1], gameDifficulty[1]);
+            break;
 
-        generateBoard(board, loopsArray[2], gameDifficulty[2]);
-
-    } else if (chooseDifficulty.value === gameDifficulty[1]) {
-
-        generateBoard(board, loopsArray[1], gameDifficulty[1]);
-
-    } else if (chooseDifficulty.value === gameDifficulty[0]) {
-
-        generateBoard(board, loopsArray[0], gameDifficulty[0]);
-
+        case gameDifficulty[0]:
+        default:
+            generateBoard(board, loopsArray[0], gameDifficulty[0]);
     }
 })
+
+
