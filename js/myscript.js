@@ -22,24 +22,8 @@ function generateBoard(elementToAppendTo, loops, difficulty) {
     }
 }
 
-// OPERATIONS
-
-const board = document.querySelector(".board");
-const gameDifficulty = ["Facile", "Medio", "Difficile", "Pro"];
-const loopsArray = [100, 81, 49, 25];
-const chooseDifficulty = document.getElementById("difficulty-selector");
-const playButton = document.getElementById("play-button");
-const callToAction = document.querySelector(".call-to-action");
-
-
-// Creazione opzioni in modo dinamico
-for (i = 0; i < gameDifficulty.length; i++) {
-    const option = generateElement("option", "", gameDifficulty[i], false);
-    option.value = gameDifficulty[i];
-    chooseDifficulty.append(option);
-}
-
-playButton.addEventListener("click", function () {
+// Funzione per inizializzare il gioco
+function startGame() {
     callToAction.classList.add("d-none");
     board.classList.remove("d-none");
     board.innerHTML = "";
@@ -61,6 +45,25 @@ playButton.addEventListener("click", function () {
         default:
             generateBoard(board, loopsArray[0], gameDifficulty[0]);
     }
-})
+}
+
+// OPERATIONS
+
+const board = document.querySelector(".board");
+const gameDifficulty = ["Facile", "Medio", "Difficile", "Pro"];
+const loopsArray = [100, 81, 49, 25];
+const chooseDifficulty = document.getElementById("difficulty-selector");
+const playButton = document.getElementById("play-button");
+const callToAction = document.querySelector(".call-to-action");
+
+
+// Creazione opzioni in modo dinamico
+for (i = 0; i < gameDifficulty.length; i++) {
+    const option = generateElement("option", "", gameDifficulty[i], false);
+    option.value = gameDifficulty[i];
+    chooseDifficulty.append(option);
+}
+
+playButton.addEventListener("click", startGame)
 
 
