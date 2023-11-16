@@ -16,10 +16,12 @@ function generateElement(tag, classes, content, wantEventListener) {
 
 // Funzione per generare board
 function generateBoard(elementToAppendTo, loops, difficulty) {
+    const fragment = document.createDocumentFragment()
     for (i = 1; i <= loops; i++) {
         const cellElement = generateElement("li", `cell ${difficulty}`, i, true);
-        elementToAppendTo.append(cellElement);
+        fragment.append(cellElement);
     }
+    elementToAppendTo.append(fragment);
 }
 
 // Funzione per inizializzare il gioco
