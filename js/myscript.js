@@ -25,8 +25,8 @@ function generateBoard(elementToAppendTo, loops, difficulty) {
 // OPERATIONS
 
 const board = document.querySelector(".board");
-const gameDifficulty = ["Noob", "Facile", "Medio", "Difficile"];
-const loopsArray = [25, 49, 81, 100];
+const gameDifficulty = ["Facile", "Medio", "Difficile", "Pro"];
+const loopsArray = [100, 81, 49, 25];
 const chooseDifficulty = document.getElementById("difficulty-selector");
 const playButton = document.getElementById("play-button");
 const callToAction = document.querySelector(".call-to-action");
@@ -45,21 +45,21 @@ playButton.addEventListener("click", function () {
     board.innerHTML = "";
 
     // Generazione board condizionale in base alla difficoltà
-    if (chooseDifficulty.value === gameDifficulty[0]) {
+    if (chooseDifficulty.value === gameDifficulty[3]) {
 
-        generateBoard(board, loopsArray[0], gameDifficulty[0]);
-
-    } else if (chooseDifficulty.value === gameDifficulty[1]) {
-
-        generateBoard(board, loopsArray[1], gameDifficulty[1]);
+        generateBoard(board, loopsArray[3], gameDifficulty[3]);
 
     } else if (chooseDifficulty.value === gameDifficulty[2]) {
 
         generateBoard(board, loopsArray[2], gameDifficulty[2]);
 
-    } else if (chooseDifficulty.value === gameDifficulty[3]) {
+    } else if (chooseDifficulty.value === gameDifficulty[1]) {
 
-        generateBoard(board, loopsArray[3], gameDifficulty[3]);
+        generateBoard(board, loopsArray[1], gameDifficulty[1]);
+
+    } else if (chooseDifficulty.value === gameDifficulty[0]) {
+
+        generateBoard(board, loopsArray[0], gameDifficulty[0]);
 
     }
 })

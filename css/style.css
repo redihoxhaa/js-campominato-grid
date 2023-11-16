@@ -75,8 +75,8 @@ ul.board .cell {
 }
 
 .cell.facile {
-    width: calc(100% / 7);
-    height: calc(100% / 7);
+    width: calc(100% / 10);
+    height: calc(100% / 10);
 }
 
 .cell.medio {
@@ -85,11 +85,11 @@ ul.board .cell {
 }
 
 .cell.difficile {
-    width: calc(100% / 10);
-    height: calc(100% / 10);
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
-.cell.noob {
+.cell.pro {
     width: calc(100% / 5);
     height: calc(100% / 5);
 }
