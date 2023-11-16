@@ -58,7 +58,6 @@ playButton.addEventListener("click", function () {
             generateBoard(board, loopsArray[1], gameDifficulty[1]);
             break;
 
-        case gameDifficulty[0]:
         default:
             generateBoard(board, loopsArray[0], gameDifficulty[0]);
     }
